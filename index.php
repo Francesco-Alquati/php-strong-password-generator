@@ -1,19 +1,5 @@
 <?php
-    // creo la funzione per generare la password
-    function generaPassword($lunghezza)
-    {
-        $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>/?';
-        $password = '';
-        for ($i = 0; $i < $lunghezza; $i++) {
-            $password .= $caratteri[random_int(0, strlen($caratteri) - 1)];
-        }
-        return $password;
-    }
-
-    if (isset($_GET['passwordLength'])) {
-        $lunghezza = intval($_GET['passwordLength']);
-        $password = generaPassword($lunghezza);
-    }
+   include __DIR__.'/function.php'
 ?>
 
 <!DOCTYPE html>
@@ -42,11 +28,11 @@
                 <div class="form-container">
                     <form action="./index.php" method="GET">
                         <div class=" mt-3 d-flex justify-content-around align-items-center">
-                            <label class="form-label fs-6 text-uppercase">Lunghezza Password :</label>
-                            <input type="number" id="passwordLength" name="passwordLength" min="8">
+                            <label class="form-label fs-4 text-white text-uppercase">Lunghezza Password :</label>
+                            <input type="number" class="label-size" id="passwordLength" name="passwordLength" min="8" max="80">
                         </div>
                         <div class="text-center mt-5">
-                            <input type="submit" class="btn btn-primary" value="Genera">
+                            <input type="submit" class="btn btn-warning" value="Genera">
                         </div>
                     </form>
                 </div>
@@ -55,7 +41,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="form-container mt-5 d-flex justify-content-center align-items-center h-100">
-                    <div><?php echo "LA TUA PASSWORD : $password";?></div>
+                    <div>
+                        <p class="text-center fs-4 text-white">LA TUA PASSWORD : <span class="password fs-6"><?php echo $password?></span></p>
+                    </div>
                 </div>
             </div>
         </div>
