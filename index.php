@@ -28,8 +28,8 @@
                 <div class="form-container">
                     <form action="./index.php" method="GET">
                         <div class=" mt-3 d-flex justify-content-around align-items-center">
-                            <label class="form-label fs-4 text-white text-uppercase">Lunghezza Password :</label>
-                            <input type="number" class="label-size" id="passwordLength" name="passwordLength" min="8" max="80">
+                            <label class="form-label fs-4 text-white text-uppercase mt-4">Lunghezza Password :</label>
+                            <input type="number" class="label-size password " id="passwordLength" name="passwordLength" min="8" max="80">
                         </div>
                         <div class="text-center mt-5">
                             <input type="submit" class="btn btn-warning" value="Genera">
