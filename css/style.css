@@ -50,6 +50,15 @@ body {
   color: black;
 }
 .label-size{
-  width: 150px;
+  width: 200px;
   height: 40px;
+}
+.bg-icons{
+  background-color: black;
+  height: 13px;
+  width: 7px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
